@@ -1,0 +1,40 @@
+<div class="content" ng-class="{fiterMask:needLogin}">    
+    <div class="rightContent">
+        <div class="header">
+            <h1>{{customer.code}}:{{customer.name}}</h1>
+        </div>
+        <div class="content_left">
+            <fieldset> 
+                <legend>情報</legend> 
+                <ul class="customer listItem">
+                    <li class="item_detail1"><span class="form_key">顧客コード:</span>{{customer.code}}</li>
+                    <li class="item_detail1"><span class="form_key">顧客名:</span>{{customer.name}}</li>
+                    <li class="item_detail1"><span class="form_key">Tel:</span>{{customer.tel}}</li>
+                    <li class="item_detail1"><span class="form_key">Fax:</span>{{customer.fax}}</li>
+                    <li class="item_detail1"><span class="form_key">〒:</span>{{customer.zipcode}}</li>
+                    <li class="item_detail1"><span class="form_key">住所:</span>{{customer.pref.name + customer.ward + customer.addr1 + + customer.addr2}}</li>
+                    <li class="item_detail1"><span class="form_key">E-mail:</span>{{customer.email}}</li>
+                    <li class="item_detail1"><span class="form_key">担当者:</span>{{customer.staffName}}</li> 
+                    <li class="item_detail1"><span class="form_key">営業担当者:</span>{{customer.saleStaff.name}}</li> 
+                </ul>
+            </fieldset>
+            <fieldset ng-if="billCustomer"> 
+                <legend>請求情報</legend> 
+                <ul class="customer listItem">
+                    <li class="item_detail1"><span class="form_key">顧客コード:</span><a href="#/customer/{{billCustomer.id}}">{{billCustomer.code}}</a></li>
+                    <li class="item_detail1"><span class="form_key">顧客名:</span>{{billCustomer.name}}</li>
+                    <li class="item_detail1"><span class="form_key">Tel:</span>{{billCustomer.tel}}</li>
+                    <li class="item_detail1"><span class="form_key">Fax:</span>{{billCustomer.fax}}</li>
+                    <li class="item_detail1"><span class="form_key">〒:</span>{{billCustomer.zipcode}}</li>
+                    <li class="item_detail1"><span class="form_key">住所:</span>{{billCustomer.pref.name + customer.ward + customer.addr1 + + customer.addr2}}</li>
+                    <li class="item_detail1"><span class="form_key">E-mail:</span>{{billCustomer.email}}</li>
+                    <li class="item_detail1"><span class="form_key">担当者:</span>{{billCustomer.staffName}}</li> 
+                    <li class="item_detail1"><span class="form_key">営業担当者:</span>{{billCustomer.saleStaff.name}}</li> 
+                </ul>
+            </fieldset>
+        </div>
+    </div>
+    <div class="nav" ng-include="'partials/tpl/nav.html'"></div>  
+</div>
+<need-login ng-if="needLogin"></need-login>
+

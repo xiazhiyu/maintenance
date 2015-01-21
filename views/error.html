@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>CSOne</title>
+ 
+  <link rel="stylesheet" href="lib/ng-grid/ng-grid.min.css"/>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/app.css"/>
+   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css">
+    <script>
+      function getIEVersion() {
+          var rv = -1;
+          if (navigator.appName == 'Microsoft Internet Explorer') {
+              var ua = navigator.userAgent;
+              var re = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+              if (re.exec(ua) != null)
+              rv = parseFloat(RegExp.$1);
+          }
+          else if(navigator.appName == 'Netscape'){
+              var ua = navigator.userAgent;
+              var re = new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})"); //for IE 11
+              if (re.exec(ua) != null)
+              rv = parseFloat(RegExp.$1);
+          }
+          return rv;
+      }
+      IEV = getIEVersion();
+      if(IEV>=6&&IEV<9){
+          window.location.href="http://google.com";  
+      }else if(IEV>=9){
+          document.documentElement.className+=' ie ie'+IEV;
+      }
+      //document.documentElement.className+=' ie'+IEV;
+    </script>
+</head>
+<body>
+
+  <h3>error</h3>
+  
+
+  
+</body>
+</html>

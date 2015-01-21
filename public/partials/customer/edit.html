@@ -1,0 +1,13 @@
+<div class="content" ng-class="{fiterMask:needLogin}">    
+    <div class="rightContent">
+        <div class="header">
+            <h1><span>顧客登録 </span><a ng-click="searchAsideshow();"><i class="fa fa-search"></i></a></h1>  
+
+        </div>
+        <div class="gridStyle"></div>
+        <div class="footer"><a ng-click="CsvExport($event.target)" download="sercie.csv">CSV出力</a></div>
+    </div>
+    <div class="nav" ng-include="'partials/tpl/nav.html'"></div>  
+</div>
+<need-login ng-if="needLogin"></need-login>
+

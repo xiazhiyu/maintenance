@@ -1,0 +1,346 @@
+/* app css stylesheet */
+html{
+     height: 100%;
+}
+body {
+    font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',Meiryo, メイリオ, sans-serif;
+    color: #000000;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+#ngView, .divMask, .content{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+.content{
+    
+}
+.fiterMask{
+    -webkit-filter: blur(3px);
+    opacity: 0.5;
+    filter: blur(3px);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false);
+}
+.divMask .loginDiv{
+    background: rgb(206, 247, 221);
+    border: 1px solid rgb(224, 214, 214);
+    padding: 3em;
+}
+.rightContent{
+    position: absolute;
+    padding-left: 11.2em;
+    height: 100%;
+    padding-bottom: 1em;
+    overflow-y: auto;
+    left: 0;
+    width: 100%;
+    padding-right: 0.5em;
+}
+.center{
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    width:50%;
+    height:15em;
+    padding:20px;
+    text-align:center;
+    background:#393;
+    transform: translate(-50%, -50%);
+}
+
+h3 {
+    font-weight: normal;
+    color: rgb(114, 114, 121);
+    margin-left: 1em;
+    font-size: 11pt;
+    font-family: Verdana, Arial, sans serif;
+}
+.menu {
+  list-style: none;
+  /* border-bottom: 0.1em solid black; */
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+  margin-top: 5em;
+}
+
+.menu:before {
+  /* content: "["; */
+}
+
+.menu:after {
+  /* content: "]"; */
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  /* content: "|"; */
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+input {
+    height: 2.4em;
+    clear: both;
+    display: block;
+    margin-bottom: 1em;
+    width: 22em;
+    font-size: 10pt;
+    padding: 5px;
+}
+
+input[type="submit"]{
+    background-color: rgb(130, 117, 179);
+    /* height: 3.2em; */
+    border: none;
+    color: white;
+    width: 7em;
+    cursor: pointer;
+}
+
+td {
+font-weight: normal;
+font-size: 13px;
+font-family: Verdana, Arial, sans serif;
+/* text-align: left; */
+}
+.float_left {
+    float: left;
+}
+.gridStyle {
+    /* border-bottom: 1px solid rgb(212,212,212); */
+    width: 99%; 
+    height:80%;
+    font-family: Verdana, Arial, sans serif;
+    font-size: 13px;
+}
+.display.gridStyle {
+    min-height: 10em;
+}
+.gridStyle span {
+    float: left;
+}
+.ngPinnedIcon, .ngUnPinnedIcon{
+    display: none;
+}
+.bold {
+    font-weight: bold;
+}
+.w80{
+    width: 80px;
+}
+.displayTable tr td{
+    float: left;
+}
+
+div.nav{
+    width: 10em;
+    color: white;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background: rgba(60, 60, 64, 1);
+    left: 0;
+    height: 100%;
+    box-shadow: 0 0px 5px 0 #777;
+}
+
+ul.menu li a {
+    color: rgba(248, 248, 248, 1);;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    font-size: 12pt;
+    text-align: center;
+    padding-right: 1em;
+}
+ul.menu li{
+    display: block;
+    margin-bottom: 1em;
+}
+ul.listItem{
+    padding: 5px;
+    font-family: Verdana, Arial, sans serif;
+    font-size: 10.1pt;
+    height: 20e;
+    /* border-right: 1px rgb(173, 173, 173) solid; */
+}
+ul.listItem:hover{
+     border-left-color: rgba(243, 123, 123, 0.67);
+     
+}
+ul.listItem div {
+    margin-left: 2em;
+    font-size: 11pt;
+}
+div.content_left{
+    width: 50%;;
+    text-align: left;
+    float: left;
+}
+div.header {
+    text-align: left;
+    /* border-bottom: 1px solid rgba(128, 128, 128, 0.46); */
+    height: 6em;
+    /*background: rgb(232, 232, 240);*/
+    margin-top: 0;
+}
+div.header h1 {
+    font-size: 1.4em;
+    color: rgb(239, 99, 77);
+    padding: 1em 1.2em 1em 1em;
+    margin: 0;
+    float: left;
+}
+li.item_detail1 {
+    list-style: none;
+    margin-bottom: 0.4em;
+}
+div.content_right {
+float: left;
+width: 50%;
+}
+
+div.ngCell i {
+line-height: 32px;
+font-size: 16px;
+margin-left: 7px;
+}
+div.header i.fa-search {
+    margin-left: 1em;
+    color: rgb(223, 156, 94);
+}
+div.aside div.aside-content.aside-content-search div.aside-header {
+    background-color: rgb(240, 184, 134);
+}
+div.aside-content.aside-content-search .aside-body {
+padding: 10px 0px 0px 0px;
+}
+
+div.aside-content.aside-content-search ul {
+    margin: 0;
+    padding: 1em;
+}
+div.aside-content.aside-content-search ul li {
+    list-style: none;
+    margin-bottom: 0.8em;
+}
+div.aside-content.aside-content-search .aside-body input {
+    width: 50%;
+    float: right;
+}
+div.aside-content.aside-content-search .aside-body ul li label {
+    width: 100%;
+    margin-left: 0;
+}
+.btn.btn-search {
+    background-color: rgb(240, 128, 53);
+    border-color: rgb(240, 128, 53);
+    color: white;
+}
+div.aside-content.aside-content-search {
+    width: 25em;
+}
+div.status_line li {
+    float: left;
+    display: inline-block;
+    width: 32%;
+}
+div.status_line {
+    clear: both;
+    height: 3em;
+    text-align: center;
+}
+span.form_key {
+    width: 6em;
+    display: inline-block;
+    color: rgb(182, 182, 182);
+}
+div.clear{
+    clear: both;
+}
+legend i{
+    font-size: 13pt;
+    color: rgb(85, 83, 83);  
+    padding-left: 10px;
+}
+i{
+    cursor: pointer;
+}
+i.delete {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+}
+
+div.modal-dialog.equipmentToCustomerModal {
+    width: 80%;
+    height: 80%;
+}
+
+div.modal-dialog.equipmentToCustomerModal .modal-content{
+    height: 100%;
+}
+div.modal-dialog.equipmentToCustomerModal .modal-content .modal-body{
+    padding: 0;
+}
+div.modal-dialog.equipmentToCustomerModal .modal-content .gridStyle {
+    min-height: 25em;
+    margin: 0;
+}
+div.modal.fade.serviceModifyForm .modal-dialog {
+    width: 90%;
+}
+div.modal.fade.serviceModifyForm .modal-dialog .modal-content .modal-body{
+    height: 20em;
+    overflow-y: scroll;
+    padding: 0;
+    font-size: 10.1pt;
+}
+span.table_header_0{
+    width: 8%;
+}
+span.table_header_1{
+    width: 25%;
+}
+span.table_header_2{
+    width: 8%;
+}
+span.table_header_3{
+    width: 25%;
+}
+span.table_header_4{
+    width: 8%;
+}
+span.table_header_5{
+    /* width: 22%; */
+}
+span.table_span {
+    display: inline-block;
+    margin: 0;
+}
+div.modal.fade.serviceModifyForm .modal-dialog .modal-content .modal-body .item{
+    line-height: 2.3em;
+}
+div.modal.fade.serviceModifyForm .modal-dialog .modal-content .modal-body div.item:hover{
+   background-color: rgb(250, 248, 231);
+}
+div.modal.fade.serviceModifyForm .modal-dialog .modal-content .modal-body .item.even{
+    background-color: #f3f3f3;
+}
+div.modal.fade.serviceModifyForm .modal-dialog .modal-content .modal-body .item.odd{
+    background-color: #fdfdfd;
+}
+div.table_header{
+    background: rgb(222, 241, 241);
+    border-bottom: 1px solid gray;
+    color: rgb(214, 136, 161);
+    font-size: 12.5pt;
+}

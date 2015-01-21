@@ -1,0 +1,96 @@
+<div class="content" ng-class="{fiterMask:needLogin}">    
+    <div class="rightContent">   
+        <div class="header">
+            <h1>{{service.serviceNo}}:{{service.title}}</h1>
+        </div>
+        <div class="content_left">
+            <fieldset> 
+                <legend>顧客</legend> 
+                <ul class="serviceItem_customer listItem">
+                    <li class="item_detail1"><span class="form_key">顧客コード:</span>{{service.equipment.location.customer.code}}</li>
+                    <li class="item_detail1"><span class="form_key">顧客名:</span>{{service.equipment.location.customer.name}}</li>
+                    <li class="item_detail1"><span class="form_key">Tel:</span>{{service.equipment.location.customer.tel}}</li>
+                    <li class="item_detail1"><span class="form_key">Fax:</span>{{service.equipment.location.customer.fax}}</li>
+                    <li class="item_detail1"><span class="form_key">〒:</span>{{service.equipment.location.customer.zipcode}}</li>
+                    <li class="item_detail1"><span class="form_key">住所:</span>{{service.equipment.location.customer.pref.name + service.location.customer.ward + service.location.customer.addr1 + + service.location.customer.addr2}}</li>
+                    <li class="item_detail1"><span class="form_key">E-mail:</span>{{service.equipment.location.customer.email}}</li>
+                    <li class="item_detail1"><span class="form_key">担当者:</span>{{service.equipment.location.customer.staffName}}</li> 
+                    <li class="item_detail1"><span class="form_key">営業担当者:</span>{{service.equipment.location.customer.saleStaff.name}}</li> 
+                </ul>
+            </fieldset>
+            <fieldset ng-if="billCustomer"> 
+                <legend>請求情報</legend> 
+                <ul class="serviceItem_customer listItem">
+                    <li class="item_detail1"><span class="form_key">顧客コード:</span>{{billCustomer.code}}</li>
+                    <li class="item_detail1"><span class="form_key">顧客名:</span>{{billCustomer.name}}</li>
+                    <li class="item_detail1"><span class="form_key">Tel:</span>{{billCustomer.tel}}</li>
+                    <li class="item_detail1"><span class="form_key">Fax:</span>{{billCustomer.fax}}</li>
+                    <li class="item_detail1"><span class="form_key">〒:</span>{{billCustomer.zipcode}}</li>
+                    <li class="item_detail1"><span class="form_key">住所:</span>{{billCustomer.pref.name + customer.ward + customer.addr1 + + customer.addr2}}</li>
+                    <li class="item_detail1"><span class="form_key">E-mail:</span>{{billCustomer.email}}</li>
+                    <li class="item_detail1"><span class="form_key">担当者:</span>{{billCustomer.staffName}}</li> 
+                    <li class="item_detail1"><span class="form_key">営業担当者:</span>{{billCustomer.saleStaff.name}}</li> 
+                </ul>
+            </fieldset>
+            <fieldset> 
+                <legend>機器<i class="fa fa-pencil-square-o" ng-click="showEquipmentFormModal();"></i></legend> 
+                <ul class="serviceItem_customer listItem">       
+                    <li class="item_detail1"><span class="form_key">機器NO:</span>{{service.equipment.equipmentNo}}</li>
+                    <li class="item_detail1"><span class="form_key">機器名:</span>{{service.equipment.name}}</li>
+                    <li class="item_detail1"><span class="form_key">製品名:</span>{{service.equipment.item.name}}</li>
+                    <li class="item_detail1"><span class="form_key">機器タイプ:</span>{{service.equipment.equipmentType.showText}}</li>
+                    <li class="item_detail1"><span class="form_key">メーカ:</span>{{service.equipment.item.maker}}</li>
+                    <li class="item_detail1"><span class="form_key">型番:</span>{{service.equipment.item.modelNo}}</li>
+                    <li class="item_detail1"><span class="form_key">シリアルNO:</span>{{service.equipment.serialNo}}</li>
+                    <li class="item_detail1"><span class="form_key">購入日:</span>{{service.equipment.purchaseDate|date:'yyyy-MM-dd'}}</li>
+                    <li class="item_detail1"><span class="form_key">保証開始日:</span>{{service.equipment.warrantyBegin|date:'yyyy-MM-dd'}}</li>
+                    <li class="item_detail1"><span class="form_key">保証終了日:</span>{{service.equipment.warrantyEnd|date:'yyyy-MM-dd'}}</li>
+
+                </ul>
+            </fieldset>
+        </div>
+        <div class="content_right">  
+            <fieldset>
+                <legend>場所</legend>
+                <ul class="serviceItem_info listItem">    
+                    <li class="item_detail1"><span class="form_key">場所NO:</span>{{service.equipment.location.locationNo}}</li>
+                    <li class="item_detail1"><span class="form_key">場所名:</span>{{service.equipment.location.name}}</li>
+                    <li class="item_detail1"><span class="form_key">Tel:</span>{{service.equipment.location.tel}}</li>
+                    <li class="item_detail1"><span class="form_key">Fax:</span>{{service.equipment.location.fax}}</li>
+                    <li class="item_detail1"><span class="form_key">〒:</span>{{service.equipment.location.zipcode}}</li>
+                    <li class="item_detail1"><span class="form_key">住所:</span>{{service.equipment.location.pref.name + service.customer.ward + service.customer.addr1 + + service.customer.addr2}}</li>
+                    <li class="item_detail1"><span class="form_key">E-mail:</span>{{service.equipment.location.email}}</li>
+                    <li class="item_detail1"><span class="form_key">担当者:</span>{{service.equipment.location.staffName}}</li>
+                    <li class="item_detail1"><span class="form_key"></span></li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>受注情報<i class="fa fa-pencil-square-o"></i></legend>
+                <ul class="serviceItem_info listItem">    
+                    <li class="item_detail1"><span class="form_key">受注NO:</span>{{service.serviceNo}}</li>
+                    <li class="item_detail1"><span class="form_key">件名:</span>{{service.title}}</li>
+                    <li class="item_detail1"><span class="form_key">受付日:</span>{{service.serviceDate | date:'yyyy-MM-dd'}}</li>
+                    <li class="item_detail1"><span class="form_key">顧客注文NO:</span>{{service.orderNo}}</li>
+                    <li class="item_detail1"><span class="form_key">受付タイプ:</span>{{service.serviceType.showText}}</li>
+                    <li class="item_detail1"><span class="form_key">修理区分:</span>{{service.repairType.showText}}</li>
+                    <li class="item_detail1"><span class="form_key">修理内容:</span>{{service.failureType.showText}}</li>
+                    <li class="item_detail1"><span class="form_key">担当者:</span>{{service.equipment.location.staffName}}</li>
+
+                </ul>
+            </fieldset>
+        </div>
+         <div class="clear">
+            <fieldset>
+                <legend>作業<i class="fa fa-plus-square"></i> </legend>
+                <div class="display gridStyle" ng-grid="gridOptions"></div>
+            </fieldset>
+        </div>
+        <div class="clear">
+            <fieldset>
+                <legend>SELECTED: <span>{{selected}}</span></legend>
+            </fieldset>
+        </div>            
+    </div>
+    <div class="nav" ng-include="'partials/tpl/nav.html'"></div>  
+</div>
+<need-login ng-if="needLogin"></need-login>

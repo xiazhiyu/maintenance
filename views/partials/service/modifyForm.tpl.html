@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <h3>機器一覧</h3>
+</div>
+<div class="table_header">
+     <span class="table_span table_header_0">機器NO</span>
+     <span class="table_span table_header_1">機器名</span>
+     <span  class="table_span table_header_2">場所NO</span>
+     <span  class="table_span table_header_3">場所名</span>
+     <span  class="table_span table_header_4">顧客コード</span>
+     <span  class="table_span table_header_5">顧客名</span>
+</div>
+<div class="modal-body">
+    <div class="item" ng-repeat="item in equipmentToCustomerList" ng-class-odd="'odd'" ng-class-even="'even'"  ng-click="ok(item.equipmentId)">
+        <span class="table_span table_header_0">{{item.equipmentNo}}</span>
+        <span class="table_span table_header_1">{{item.equipmentName}}</span>
+        <span class="table_span table_header_2">{{item.locationNo}}</span>
+        <span class="table_span table_header_3">{{item.locationName}}</span>
+        <span class="table_span table_header_4">{{item.customerCode}}</span>
+        <span class="table_span table_header_5">{{item.customerName}}</span> 
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" ng-click="cancel()">閉じる</button>
+</div>
